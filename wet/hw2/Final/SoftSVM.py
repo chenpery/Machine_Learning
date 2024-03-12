@@ -93,8 +93,6 @@ class SoftSVM(BaseEstimator, ClassifierMixin):
         if keep_losses:
             losses.append(self.loss(self.w, self.b, self.C, X, y))
             accuracies.append(self.score(X, y))
-            #print(f'losses: {losses}')
-            #print(f'accuracies: {accuracies}')
 
         permutation = np.random.permutation(len(y))
         X = X[permutation, :]
@@ -143,7 +141,7 @@ class SoftSVM(BaseEstimator, ClassifierMixin):
         :return: Predicted class labels for samples in X; array of shape (n_samples,)
                  NOTE: the labels must be either +1 or -1
         """
-        # compute labels 
+        # compute labels
         y_pred = np.sign( X.dot(self.w) + self.b).astype(int)
 
         # Set predictions of 0 to 1
