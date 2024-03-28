@@ -17,7 +17,7 @@ class LinearRegressor(BaseEstimator, RegressorMixin):
         self.batch_size = 32
         self.w = None
         self.b = 0.0
-        self.delta = huber_delta
+        self.huber_delta = huber_delta
 
     # Initialize a random weight vector
     def init_solution(self, n_features: int):
@@ -84,8 +84,8 @@ class LinearRegressor(BaseEstimator, RegressorMixin):
         val_losses = []
 
         if keep_losses:
-            train_losses.append(self.loss(self.w, self.b, X, y, self.delta))
-            val_losses.append(self.loss(self.w, self.b, X_val, y_val, self.delta))
+            train_losses.append(self.loss(self.w, self.b, X, y, self.huber_delta))
+            val_losses.append(self.loss(self.w, self.b, X_val, y_val, self.huber_delta))
 
         # Iterate over batches (SGD)
         for itr in range(0, max_iter):
@@ -103,8 +103,8 @@ class LinearRegressor(BaseEstimator, RegressorMixin):
             self.b = 0.0
 
             if keep_losses:
-                train_losses.append(self.loss(self.w, self.b,  X, y, self.delta))
-                val_losses.append(self.loss(self.w, self.b,  X_val, y_val, self.delta))
+                train_losses.append(self.loss(self.w, self.b,  X, y, self.huber_delta))
+                val_losses.append(self.loss(self.w, self.b,  X_val, y_val, self.huber_delta))
 
         return train_losses, val_losses
 
