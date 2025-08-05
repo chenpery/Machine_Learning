@@ -1,6 +1,6 @@
 # Major Homework Projects – Machine Learning Course
 
-This repository contains both wet and dry parts of a major multi-part assignment for the Machine Learning course.
+This repository contains both wet and dry parts of a major multi-part assignment for the Machine Learning course 02360756 .
 
 ## wet/ – Programming Assignments
 
@@ -31,6 +31,7 @@ In Part 2, different models (ridge, lasso, etc.) are evaluated and compared base
 | File                             | Description |
 |----------------------------------|-------------|
 | `Major_HW3_-_Regression.pdf`     | Instructions for Part 3 |
+| `report.pdf`     | report for Part 3 |
 Part 3 explores regression using Huber loss, theory questions about generalization, VC-dimension, and convexity.
 
 ---
